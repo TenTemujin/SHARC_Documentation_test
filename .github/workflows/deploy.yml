@@ -12,6 +12,9 @@ jobs:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     steps:
+      - name: Move to build path
+        run: cd Documentation_deploy
+        
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -19,9 +22,6 @@ jobs:
         with:
           node-version: 18
           cache: yarn
-
-      - name: Move to build path
-        run: cd Documentation_deploy
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
