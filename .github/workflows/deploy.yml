@@ -26,8 +26,8 @@ jobs:
       - name: Move to build path
         run: cd Documentation_deploy
 
-      - name: Where am i?
-        run: ls
+        - name: Where am i?
+          run: ls
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
